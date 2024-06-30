@@ -1,0 +1,162 @@
+.topbarContainer{
+    height: 50px;
+    width: 100%;
+    background-color: #1877f2;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.topbarLeft{
+    flex : 3;
+}
+.logo{
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.topbarCenter{
+    flex : 5;
+}
+.searchbar{
+    width: 75%;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+.searchInput{
+    border: none;
+    font-size: 16px;
+    width: 90%;
+    outline: none;
+}
+.topbarRight{
+    flex : 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+.topbarLink{
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.topbarImg{
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    left: -20px;
+}
+.topbarIcons{
+    display: flex;
+}
+.topbarIconItem{
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+.topbarIconBadge{
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.topbarProfile {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 170px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+  }
+  
+  .dropdownItem {
+    padding: 10px 15px;
+    display: block;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .dropdownItem:hover {
+    background-color: #f1f1f1;
+  }
+.searchDropdown {
+    position: absolute;
+    background-color: white;
+    width: 400px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    top: 50px;
+  }
+  
+  .searchResultsList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .searchResultsList li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .searchResultsList li:last-child {
+    border-bottom: none;
+  }
+  
+  .searchResultsList li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .searchResultImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .searchResultName {
+    position: relative;
+    margin-left: 6px;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .searchResultName a {
+    text-decoration: none;
+    color: inherit;
+  }
+  

@@ -1,0 +1,64 @@
+/* search.css */
+.searchResults {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .searchResults h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .userList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .userList li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .userList li:hover {
+    transform: translateY(-3px);
+  }
+  
+  .userList img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #ddd;
+    object-fit: cover;
+  }
+  
+  .userList span {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .userList a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+  }
+  
+  .userList a:hover span {
+    color: #555;
+  }
+  

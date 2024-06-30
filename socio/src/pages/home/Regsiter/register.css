@@ -1,0 +1,95 @@
+.register{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.registerWrapper{
+    width: 70%;
+    height: 70%;
+    display: flex;
+}
+.registerLeft , .registerRight{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+.registerLogo{
+    font-size: 50px;
+    font-weight: bold;
+    color: #775ee7;
+    margin-bottom: 10px;
+}
+.registerDesc{
+    font-size: 24px;
+    width: 80%;
+}
+.registerBox{
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.registerInput{
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+    width: 95%;
+}
+.registerInput:focus{
+    outline: none;
+}
+.registerButton{
+    height: 50px;
+    width: 90%;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(84, 84, 244);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.registerForgot{
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: blue;
+    margin-top: -12px;
+}
+.registerRegisterButton{
+    width: 60%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #42b72a;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    align-self: center;
+} 
+.togglePasswordButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: gray;
+  }
+  .inputWrapper {
+    position: relative;
+    width: 100%;
+  }
