@@ -1,4 +1,4 @@
-Description
+Description - 
 My Social App is a social networking platform that allows users to connect, share posts, follow each other, and interact in various ways. 
 This project is built using modern web development technologies and aims to provide a seamless social media experience.
 
