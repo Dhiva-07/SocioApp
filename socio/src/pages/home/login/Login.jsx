@@ -62,11 +62,11 @@ const togglePasswordVisibility = () => {
                 <span className="loginForgot">Forgot Password?</span>
                 <button className="loginButton" disabled={isFetching} >{isFetching? <CircularProgress color="inherit"/> : "Log In"}</button>
                 <button
-              type="button"
-              className="loginRegisterButton"
-              disabled={isFetching}
-              onClick={handleRegisterClick}
-            >
+                  type="button"
+                  className="loginRegisterButton"
+                  disabled={isFetching}
+                  onClick={handleRegisterClick}
+                >
               {isFetching ? <CircularProgress color="inherit" /> : "Create a new account"}
             </button>
             </form>

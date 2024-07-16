@@ -1,42 +1,112 @@
-.profile{
-    display: flex;
+.profile {
+  display: flex;
 }
-.profileRight{
-    flex : 9;
+
+.profileRight {
+  flex: 9;
 }
-.profileRightBottom{
-    display: flex;
+
+.profileRightBottom {
+  display: flex;
 }
-.profileCover{
-    height: 320px;
-    position: relative;
+
+.profileCover {
+  height: 320px;
+  position: relative;
 }
-.profileCoverImg{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+
+.profileCoverImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
-.profileUserImg{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 150px;
-    margin : auto;
-    border: 3px solid cyan;
+
+.profileUserImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+  margin: auto;
+  border: 3px solid cyan;
 }
-.profileInfo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.profileInfoName{
-    font-size: 24px;
+
+.profileInfoName {
+  font-size: 24px;
 }
-.profileInfoDesc{
-    font-weight: 300;
+
+.profileInfoDesc {
+  font-weight: 300;
+}
+
+.editIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.editSection {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  z-index: 1000;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.editItem {
+  margin-bottom: 10px;
+}
+
+.editItem label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.editItem input,
+.editItem select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.saveButton {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.saveButton:hover {
+  background: #0056b3;
 }

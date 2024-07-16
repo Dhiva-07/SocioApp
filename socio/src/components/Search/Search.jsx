@@ -7,7 +7,6 @@ export default function Search() {
   const location = useLocation();
   const PF = process.env.REACT_APP_PUBLIC_URL;
   const query = new URLSearchParams(location.search).get("query");
-  console.log("Query:", query);
   useEffect(() => {
     const fetchUsers = async () => {
       try {

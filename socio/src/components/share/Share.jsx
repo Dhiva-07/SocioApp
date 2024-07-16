@@ -44,7 +44,7 @@ export default function Share() {
                 : PF + "no_avatar.png"
                 } 
                 alt="" className="shareProfileImg" />
-                <input placeholder={"Add Description"}
+                <input placeholder={"Add Description for your post"}
                  className="shareProfile"
                  ref = {desc}  
                 />
@@ -65,18 +65,6 @@ export default function Share() {
                             setFile(e.target.files[0]);
                         }} style={{display:"none"}} />
                     </label>
-                    <div className="shareOption">
-                        <Label className="shareIcon" id = "icon_2" />
-                        <span className="shareOptionText">Tag</span>
-                    </div>
-                    <div className="shareOption">
-                        <Room className="shareIcon" id = "icon_3" />
-                        <span className="shareOptionText">Location</span>
-                    </div>
-                    <div className="shareOption">
-                        <EmojiEmotions className="shareIcon" id = "icon_4" />
-                        <span className="shareOptionText">Feelings</span>
-                    </div>
                 </div>
                 <button className="shareButton" type="submit">Share</button>
             </form>
