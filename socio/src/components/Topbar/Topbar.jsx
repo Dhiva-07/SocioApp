@@ -55,7 +55,7 @@ export default function Topbar() {
         <div className="searchbar">
           <Search className="searchicon" />
           <input
-            placeholder="Search for friend, post or video"
+            placeholder="Search for a friend"
             className="searchInput"
             value={searchQuery}
             onChange={handleSearch}

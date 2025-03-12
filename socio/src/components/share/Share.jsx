@@ -21,16 +21,17 @@ export default function Share() {
         data.append("name", fileName);
         data.append("file", file);
         newPost.img = fileName;
-        console.log(newPost);
         try {
           await axios.post("/upload", data);
           window.location.reload();
         } catch (err) {}
-    }
-    try{
-        await axios.post("/posts" , newPost);
-    }catch(err){
-
+        try{
+            await axios.post("/posts" , newPost);
+        }catch(err){
+    
+        }
+    }else{
+        alert("Please chose a photo to upload!")
     }
   }
 

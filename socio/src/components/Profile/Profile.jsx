@@ -1,5 +1,5 @@
 import "./profile.css";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , useContext} from 'react';
 import Topbar from '../../components/Topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Feed from '../../components/feed/Feed';
@@ -8,9 +8,11 @@ import axios from "axios";
 import { useParams } from "react-router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Profile() {
   const PF = process.env.REACT_APP_PUBLIC_URL;
+  const { user: currentUser } = useContext(AuthContext);
   const [user, setUser] = useState({});
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
@@ -22,15 +24,13 @@ export default function Profile() {
     desc: ""
   });
   const username = useParams().username;
-
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const res = await axios.get(`http://localhost:8800/api/users?username=${username}`);
         setUser(res.data);
         setFormData({
-          profilePicture: res.data.profilePicture || "",
-          coverPicture: res.data.coverPicture || "",
+          // userId : user.id,
           city: res.data.city || "",
           from: res.data.from || "",
           relationship: res.data.relationship || "",
@@ -59,18 +59,18 @@ export default function Profile() {
     });
   };
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
+    e.preventDefault();
     const formDataToSend = new FormData();
     formDataToSend.append("userId", user._id);
-    formDataToSend.append("profilePicture", formData.profilePicture);
-    formDataToSend.append("coverPicture", formData.coverPicture);
     formDataToSend.append("city", formData.city);
     formDataToSend.append("from", formData.from);
     formDataToSend.append("relationship", formData.relationship);
     formDataToSend.append("desc", formData.desc);
-
+    const formDataObject = Object.fromEntries(formDataToSend.entries());
+    // console.log(formDataObject);
     try {
-      await axios.put(`http://localhost:8800/api/users/${user._id}`, formData);
+      await axios.put(`http://localhost:8800/api/users/${user._id}`, formDataObject);
       window.location.reload();
     } catch (error) {
       console.log("Error updating user:", error);
@@ -87,7 +87,7 @@ export default function Profile() {
             <div className="profileCover">
               <img className="profileCoverImg" src={user.coverPicture ? PF + user.coverPicture : PF + "no_cover.jpg"} alt="" />
               <img className="profileUserImg" src={user.profilePicture ? PF + user.profilePicture : PF + "no_avatar.png"} alt="" />
-              {username === user.username && (
+              {currentUser && currentUser.username === username && (
                 <FontAwesomeIcon icon={faPencilAlt} className="editIcon" onClick={handleEditClick} />
               )}
             </div>
@@ -103,26 +103,18 @@ export default function Profile() {
         </div>
       </div>
       {editMode && (
-        <div className="editSection">
+        <form className="editSection" onSubmit={handleSave}>
           <FontAwesomeIcon icon={faTimes} className="closeIcon" onClick={handleCloseClick} />
           <div className="editItem">
-            <label>Profile Picture:</label>
-            <input type="file" name="profilePicture" onChange={handleChange} />
-          </div>
-          <div className="editItem">
-            <label>Cover Picture:</label>
-            <input type="file" name="coverPicture" onChange={handleChange} />
-          </div>
-          <div className="editItem">
-            <label>City:</label>
+            <label htmlFor="city">City:</label>
             <input type="text" name="city" value={formData.city} onChange={handleChange} />
           </div>
           <div className="editItem">
-            <label>From:</label>
+            <label htmlFor="from">From:</label>
             <input type="text" name="from" value={formData.from} onChange={handleChange} />
           </div>
           <div className="editItem">
-            <label>Relationship:</label>
+            <label htmlFor="relationship">Relationship:</label>
             <select name="relationship" value={formData.relationship} onChange={handleChange}>
               <option value="1">Single</option>
               <option value="2">Married</option>
@@ -130,11 +122,11 @@ export default function Profile() {
             </select>
           </div>
           <div className="editItem">
-            <label>Description:</label>
+            <label htmlFor="desc">Description:</label>
             <input type="text" name="desc" value={formData.desc} onChange={handleChange} />
           </div>
-          <button className="saveButton" onClick={handleSave}>Save</button>
-        </div>
+          <button className="saveButton" type = "submit">Save</button>
+        </form>
       )}
     </>
   );
